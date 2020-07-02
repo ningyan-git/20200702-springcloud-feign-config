@@ -14,12 +14,18 @@ mybatis:
 
 eureka:
   client:
+    server:
+    eviction-interval-timer-in-ms: 7000 
+    registerWithEureka: false #是否从Eureka Server查询注册信息
+    fetchRegistry: false #是否将自己注册到Eureka Server 默认为true
     service-url:
       defaultZone: http://localhost:8000/eureka
   instance:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 8
+    hostname: localhost
+
 info:
   author:
     name: fan
@@ -27,12 +33,6 @@ info:
     name: AAA
   project:
     description:BookDemo
-#eureka的配置
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    registerWithEureka: false #是否从Eureka Server查询注册信息
-    fetchRegistry: false #是否将自己注册到Eureka Server 默认为true
-  server:
-    eviction-interval-timer-in-ms: 7000 
+
+    
+  
