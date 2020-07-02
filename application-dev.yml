@@ -1,14 +1,16 @@
 spring:
   profiles: dev
-  
+
+  application:
+    name: config-serve-dev
+    
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/book?useSSL=false
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
-  application:
-    name: config-serve-dev
+  
 mybatis:
   type-aliases-package: com.aaa.fan.springcloud.entity
   mapper-locations: classpath:mapper/*Mapper.xml
